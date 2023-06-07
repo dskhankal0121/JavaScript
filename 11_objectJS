@@ -1,0 +1,60 @@
+let person = {
+  height: "6 feet",
+  name: "Dhanu",
+  age: 23,
+  isMarride: true,
+  city: "pune",
+  address :{
+    street:"maan",
+    country:"India",
+  },
+  walk: function (totalWalk) {
+    console.log(`${this.name} yes i can walk`);
+  },
+};
+console.log(person);
+console.table(person);
+console.log(`type of person ${typeof person}`);
+console.log("-----------Accessing oject properties-------");
+const personName = person.name;
+const personhEIGHT = person["height"];
+console.log(`person name is : ${personName}`);
+console.log(`person city is : ${person.city}`);
+
+console.log(`person hight is : ${person["height"]}`);
+
+person.address.street="hinjewadi"
+console.log(person.address)
+console.log("-----------Updaing oject properties-------");
+person.city = "shreepur";
+person.isMarride = "false";
+console.log(`person city is : ${person.city}`);
+console.log(`person married status is : ${person.isMarride}`);
+
+console.log("-----------Adding oject properties-------");
+person.gender = "female";
+person.state = "MH";
+
+person.walk("500m");
+console.log(person);
+console.table(person);
+
+console.log("-----------deleting oject properties-------");
+delete person.height;
+console.log(person);
+console.table(person);
+
+console.log("-----------Empty oject properties-------");
+let student = {
+  name: "shubham",
+  show: function () {
+    this.name;
+  },
+};
+console.log(student);
+student.marks = "90%";
+console.log(student);
+
+const isCityAvailable = "city" in student;
+console.log(`Is city Available in student object: ${isCityAvailable}`);
+console.log(`Is mark Available in student object: ${"marks" in student}`);
